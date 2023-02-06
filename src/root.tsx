@@ -65,6 +65,9 @@ export default function Root() {
                         <li>
                           <A href="/auth">Login</A>
                         </li>
+                        <li>
+                          <A href="/academic">Academic</A>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -80,6 +83,9 @@ export default function Root() {
                     </li>
                     <li>
                       <A href="/auth">Login</A>
+                    </li>
+                    <li>
+                      <A href="/academic">Academic</A>
                     </li>
                   </ul>
                 </div>
