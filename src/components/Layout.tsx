@@ -56,12 +56,15 @@ export default function Layout(props: Props) {
           <li>
             <A href="/">Home</A>
           </li>
-          <li>
-            <A href="/auth">Login</A>
-          </li>
-          <li>
-            <A href="/academic">Academic</A>
-          </li>
+          {user() === null ? (
+            <li>
+              <A href="/auth">Login</A>
+            </li>
+          ) : (
+            <li>
+              <A href="/academic">Academic</A>
+            </li>
+          )}
         </ul>
       </div>
     </div>
