@@ -77,6 +77,7 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
       sessionStorage.setItem("siakng_cc", res.data.siakng_cc);
       sessionStorage.setItem("mojavi", res.data.mojavi);
       setCookies(res.data);
+      await getMe();
     }
 
     return res;
@@ -98,11 +99,6 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
   }
 
   createEffect(async () => {
-    if (!authenticated()) return;
-    await getMe();
-  });
-
-  createEffect(async () => {
     const siakCookie = sessionStorage.getItem("siakng_cc");
     const mojaviCookie = sessionStorage.getItem("mojavi");
     if (siakCookie && mojaviCookie) {
@@ -111,6 +107,8 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
         mojavi: mojaviCookie,
       });
       await getMe();
+    } else {
+      navigate("/auth");
     }
   });
 
