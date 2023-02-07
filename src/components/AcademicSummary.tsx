@@ -57,7 +57,7 @@ export default function AcademicSummary(props: AcademicSummaryProps) {
         </table>
       </Box>
 
-      <div class="flex flex-row gap-2">
+      <div class="flex flex-col md:flex-row gap-2">
         <Box title="Distribusi Nilai">
           <table class="table-auto border-separate border-spacing-x-4 border-spacing-y-2">
             <tbody>
@@ -74,7 +74,7 @@ export default function AcademicSummary(props: AcademicSummaryProps) {
         </Box>
 
         <Box class="grow" title="Riwayat">
-          <table class="table-auto border-separate border-spacing-x-4 border-spacing-y-2 mx-auto">
+          <table class="table-auto border-separate border-spacing-x-4 border-spacing-y-2 mx-auto overflow-x-auto block">
             <tbody>
               <tr>
                 <th colspan="2">Periode</th>
